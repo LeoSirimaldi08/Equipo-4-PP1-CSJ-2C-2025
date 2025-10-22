@@ -1,0 +1,52 @@
+Campo,DESCRIPCION/ SIGNIFICADO,TIPO DE DATO,FORMATO/LOGITUD,VALOR POSIBLE/DOMINIO,UNIDADES,PERMITE NULOS,RESTRICCIÓN,OBSERVACIONES,FUENTE ORIGINAL,SENSIBILIDAD 
+SOCIEDAD,Identificador de la sociedad o unidad contable.,Texto,4 caracteres,X013,s/u,no,not null,"Es un identificador alfanumérico, no tiene unidad",SAP,uso interno
+CLIENTE,"Código interno del cliente Y entidad (obra social, prepaga) a la que se le factura.",Numérico,10 digitos para clientes y 6 para entidad,"300003, 2005332039",s/u,no,not null,Identificador no representa unidad ni medida,SAP,uso interno
+ASIGNACIÓN,Marca de tiempo más número de identificación Referencia o número interno asignado al documento. ,Texto,"YYYYMMDDHHMMSS####,  14 caracteres y digitos","202403281145330216, 0004X00002349",s/u,si,,referencia sin unidad,SAP,uso interno
+N° DE DOCUMENTO,Número del comprobante o factura.,Numérico,rango entre 9 y 10 digitos ,1800075112,s/u,no,clave primaria(PK) - not null,codigo de registro sin unidad,SAP,uso interno
+CLASE DE DOCUMENTO,"Tipo de documento (factura, nota de crédito, etc.)",Texto,2 caracteres,XR,s/u,no,,clasificación sin unidad,SAP,uso interno
+FECHA DE DOCUMENTO,Fecha de emisión del documento.,Fecha,dd/mm/yyyy,"martes,16 de febrero de 2024 ",dia,no,not null,unnidad de tiempo,SAP,uso interno
+FE.CONTABILIZACIÓN,Fecha de registro contable.,Fecha,dd/mm/yyyy,"Lunes,5 de febrero de 2024",dia,no,not null,unnidad de tiempo,SAP,uso interno
+SIMBOLO DE VENCIMIENTO NETO,Código del estado de vencimiento.,Texto,vacio,ausencia de valor,vacio,si,,sin datos ,SAP,uso interno
+IMPORTE EN MONEDA LOCAL,Monto total expresado en moneda nacional.,Numérico,hasta 11 digitos ,"-10319,60",$ARS,no,not null - check,unidad monetaria,SAP,uso interno
+REFERENCIA,Texto o código de referencia adicional.,Texto,rango de 12 entre caracteres y digitos,0020A00013706,s/u,si,,"Es un identificador alfanumérico, no tiene unidad",SAP,uso interno
+DOC. COMPOSICIÓN,Documento usado para compensar deudas o pagos.,Texto,rango 9 y 10 digitos ,1400019820,s/u,no,not null,Identificador no representa unidad ni medida,SAP,uso interno
+CUENTA DE MAYOR,Número de cuenta contable asociada.,Numérico,7 digitos,1030000,s/u,no,not null,Identificador no representa unidad ni medida,SAP,uso interno
+TEXTO,Observaciones o descripción.,Texto,Hasta 50 caracteres ,MASTER 27.03.2024,s/u,si,,texto sin unidad,SAP,uso interno
+FECHA,Fecha del movimiento contable.,Date,dd/mm/yyyy,"Lunes,5 de febrero de 2024",dia,no,not null,unidad tiempo,Reporte CTA CTE,uso interno
+AÑO,Año del movimiento.,Numérico entero,rango de un digito,0,s/u,no,,año inexistente(nulo),Reporte CTA CTE,uso interno
+MES,Mes del movimiento.,Numérico entero,rango de un digito,0,s/u,no,,mes inexistente,Reporte CTA CTE,uso interno
+REF.,"TIpo de documento y tipo de nota (nota de credito, factura)",Texto,2 caracteres,FA,s/u,no,not null,Identificador no representa unidad ni medida,Reporte CTA CTE,uso interno
+LET.,Tipo de factura.,Texto,1 caracter,A,s/u,no,not null,clasificación sin unidad,Reporte CTA CTE,uso interno
+SUC.,Sucursal emisora.,Numérico entero,rango de 1 hasta 3 digitos,20,s/u,no,not null,codigo de registro sin unidad,Reporte CTA CTE,uso interno
+NUM.,Número de factura.,Numérico entero,rango hasta 6 digitos ,13230,s/u,no,clave primaria(PK) - not null,Identificador no representa unidad ni medida,Reporte CTA CTE,uso interno
+NC REF.,Identificador de nota de crédito asociada.,-,vacio,ausencia de valor,vavio,si,,Sin datos,Reporte CTA CTE,uso interno
+NC LET.,Letra de la nota de crédito.,-,vacio,ausencia de valor,vacio,si,,Sin datos,Reporte CTA CTE,uso interno
+NC SUC.,Sucursal emisora de la nota de crédito.,Numérico entero,rango de 1 digito,0,s/u,no,,Nulo,Reporte CTA CTE,uso interno
+NC NUM.,Número de nota de crédito.,Numérico entero,rango de un digito,0,s/u,no,,Nulo,Reporte CTA CTE,uso interno
+IVA,Importe de IVA.,Numérico decimal,un entero y decimales,"0, 00",$ARS,no,,Datos inexistentes (nulos),Reporte CTA CTE,uso interno
+PER.ING.BRUT.,Percepción de Ingresos Brutos.,Numérico decimal,un entero y decimales,"0, 00",$ARS,no,,Datos inexistentes (nulos),Reporte CTA CTE,uso interno
+PER.IVA,Percepción de IVA.,Numérico decimal,rango hasta diez digitos entre enteros y reales,"0, 00",$ARS,no,,Datos inexistentes (nulos),Reporte CTA CTE,uso interno
+DEBE,Monto adeudado.,Numérico decimal,rango hasta 11 digitos ,"20.579.467,10",$ARS,no,not null,unidad monetaria,Reporte CTA CTE,uso interno
+HABER,Monto acreditado.,Numérico decimal,rango hasta nueve digitos entre entreros y decimales,"690966,642",$ARS,no,,unidad monetaria,Reporte CTA CTE,uso interno
+PAGOS,Pagos realizados.,Numérico decimal,un entero y decimales,"0, 00",s/u,no,,datos inexistentes (nulos),Reporte CTA CTE,uso interno
+SALDO,Saldo resultante.,Numérico decimal,rango de 8 digitos enteros y 2 decimales ,644500,$ARS,no,not null,unidad monetaria,Reporte CTA CTE,uso interno
+CONCEPTO,Descripción del movimiento.,Texto,Hasta 50 caracteres ,FACTURACION DE SERVICIOS AL 28/01/2024,s/u,no,,texto sin unidad,Reporte CTA CTE,uso interno
+COMENTARIO,Observaciones adicionales.,Texto,Hasta 50 caracteres,ANULA FACTURA 97-1171,s/u,si,,texto sin unidad,Reporte CTA CTE,uso interno
+EMPRESA,Nombre de la empresa o cliente.,Texto,Hasta 44 caracteres,15 MEDLINK SA,s/u,no,clave foranea,texto sin unidad,Reporte CTA CTE,uso interno
+FECHA ENTREGA,Fecha en que se entregó el servicio o producto.,Date,dd/mm/yyyy,1-2-2024,dia,si,,unidad tiempo,Reporte CTA CTE,uso interno
+FECHA,Fecha de emisión de la factura.,Date,dd/mm/yyyy,5-2-2024,dia,no,not null,unidad de tiempo,Reporte facturas emitidas,uso interno
+AÑO,Año correspondiente.,Numérico entero,rango de un digito,0,s/u,no,,Año Inexistente (nulo),Reporte facturas emitidas,uso interno
+MES,Mes correspondiente.,Numérico entero,rango de un digito,0,s/u,no,,Mes Inexistente (nulo),Reporte facturas emitidas,uso interno
+REF.,Código o referencia interna.,Texto,2 caracteres,FA,s/u,no,not null,clasificación sin unidad,Reporte facturas emitidas,uso interno
+LET.,"Tipo de la factura (A, B, C, etc.).",Texto,1 caracteres,A,s/u,no,not null,clasificación sin unidad,Reporte facturas emitidas,uso interno
+SUC.,Sucursal emisora.,Numérico entero,rango hasta 3 digitos,20,s/u,no,not null,Identificador no representa unidad ni medida,Reporte facturas emitidas,uso interno
+NUM.,Número de factura.,Numérico entero,rango hasta 6 digitos ,13230,s/u,no,clave primaria(PK) - not null,unidad monetaria,Reporte facturas emitidas,uso interno
+IVA,Importe del IVA.,Numérico decimal,un entero y decimales,"0,00",$ARS,no,,unidad monetaria,Reporte facturas emitidas,uso interno
+RNI,Indica si el cliente es Responsable No Inscripto.,Numerico decimal,un entero y decimales,"0,00",$ARS,no,,unidad monetaria,Reporte facturas emitidas,uso interno
+IMPORTE,Total facturado.,Numérico decimal,rango hasta nueve digitos entre entreros y decimales,"1.644.500,00",$ARS,no,check,unidad monetaria,Reporte facturas emitidas,uso interno
+EMPRESA,Nombre o razón social del cliente.,Texto,Hasta 46 caracteres ,15 - MEDLINK SA,s/u,no,clave foranea,texto sin unidad,Reporte facturas emitidas,uso interno
+CONVENIO,Tipo de convenio o acuerdo comercial.,Texto,Hasta 30 caracteres ,215 - CAPITA INTERNADOS US,s/u,no,,texto sin unidad,Reporte facturas emitidas,uso interno
+TEXTO:FACTURA:1,Observaciones o notas asociadas a la factura.,Texto,Hasta 65 caracteres ,IMPORTE CORRESPONDIENTE A PRESTACIONES MEDICAS,s/u,no,,texto sin unidad,Reporte facturas emitidas,uso interno
+TEXTO:FACTURA:2,Observaciones o notas asociadas a la factura.,Texto,Hasta 65 caracteres ,EFECTUADAS A AFILIADOS DE ESA OBRA SOCIAL .-,s/u,no,,texto sin unidad,Reporte facturas emitidas,uso interno
+TEXTO:NOTA:1,Comentarios o textos adicionales.,Texto,Hasta 65 caracteres ,por prestaciones efectuadas a personal afiliado a esa O. Social.-,s/u,no,,texto sin unidad,Reporte facturas emitidas,uso interno
+TEXTO:NOTA:2,Comentarios o textos adicionales.,Texto,Hasta 65 caracteres ,CAPITA MES DE ENERO 2024,s/u,no,,texto sin unidad,Reporte facturas emitidas,uso interno
